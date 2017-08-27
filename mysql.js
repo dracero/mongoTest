@@ -36,5 +36,13 @@ io.sockets.on('connection', function(socket){
                 socket.emit('notes', notes)
                 notes = [];
             })
+    
+    socket.on('writer', function(data){
+        // New note added, push to all sockets and insert into db
+        notes.push(data)
+        io.sockets.emit('writer', data)
+        // Use node's db injection format to filter incoming data
+        con.query('INSERT INTO mdl_user (email) VALUES (?)', data.note)
+    })
  
         });

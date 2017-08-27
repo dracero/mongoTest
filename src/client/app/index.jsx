@@ -4,6 +4,7 @@ import {render} from 'react-dom';
 import {Toggle} from './button.js';
 import {LoginControl} from './login.js';
 import {ToggleDB} from './testDB.js';
+import {ToggleIns} from './insertDB.js';
 
 ReactDOM.render(
   <LoginControl />,
@@ -18,4 +19,9 @@ ReactDOM.render(
 ReactDOM.render(
   <ToggleDB />,
   document.getElementById('app1')
+);
+
+ReactDOM.render(
+  <ToggleIns />,
+  document.getElementById('app2')
 );
