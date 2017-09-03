@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-//var $ = require('jQuery');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: [
@@ -14,8 +14,8 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'react-hot-loader!babel-loader'
     }]
-  },
-  resolve: {
+ },
+resolve: {
     extensions: ['*', '.js', '.jsx']
   },
 node: {
@@ -32,6 +32,34 @@ node: {
 
   devServer: {
     contentBase: './src',
-    hot: true
-  }
+    hot: true,
+    
+  },
+    
+ //begin external
+ target: 'node',
+    externals: [nodeExternals()]
+    //If you want to minify your files uncomment this
+    // ,
+    // plugins: [
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         compress: {
+    //             warnings: false,
+    //         },
+    //         output: {
+    //             comments: false,
+    //         },
+    //     }),
+    // ]
+//end external    
+},    
+
+    //},
+    {
+        entry: './views/index.js',
+        output: {
+            path: __dirname + '/bin',
+            filename: 'app.bundle.js',
+},
+
 };

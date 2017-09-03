@@ -5,6 +5,7 @@ import {Toggle} from './button.js';
 import {LoginControl} from './login.js';
 import {ToggleDB} from './testDB.js';
 import {ToggleIns} from './insertDB.js';
+import {ExpressDB} from './testExDB.js'
 
 ReactDOM.render(
   <LoginControl />,
@@ -24,4 +25,9 @@ ReactDOM.render(
 ReactDOM.render(
   <ToggleIns />,
   document.getElementById('app2')
+);
+
+ReactDOM.render(
+  <ExpressDB />,
+  document.getElementById('app3')
 );
