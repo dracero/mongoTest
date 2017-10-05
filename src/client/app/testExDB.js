@@ -1,8 +1,5 @@
 import React from 'react';
-var express = require('express')
-var app = express()
 var $ = require('jquery');
-
 
 export class ExpressDB extends React.Component {
   constructor(props) {
@@ -16,8 +13,16 @@ export class ExpressDB extends React.Component {
 
 handleClick() {
     // GET method route
-app.get('http://localhost:3000/', function (req, res) {
-  res.send('GET request to the homepage')
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       var res = xhttp.responseText;
+    }
+};
+xhttp.open("GET", 'http://localhost:3000', true);
+xhttp.send();
+    
   var html = '';
     for (var i = 0; i < res.length; i++){
             // We store html as a var then add to DOM after for efficiency
@@ -26,7 +31,7 @@ app.get('http://localhost:3000/', function (req, res) {
         }
         $('#notes').html(html)
         
-    });
+    
   }
 
   render() {
@@ -39,12 +44,5 @@ app.get('http://localhost:3000/', function (req, res) {
 }
 
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
 
 

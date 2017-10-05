@@ -5,9 +5,9 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "root",
-  database: "moodle"   
+  user: "bn_moodle",
+  password: "6e76bb48c3",
+  database: "bitnami_moodle"   
 });
 var notes = [];
 con.connect();
