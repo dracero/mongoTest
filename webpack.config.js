@@ -33,15 +33,9 @@ node: {
   devServer: {
     contentBase: './src',
     hot: true,
-    
+
   },
-    
- devServer: {
-        headers: {
-            'Access-Control-Allow-Origin': 'http://localhost:3000'
-        }
-    },
-    
+
  /*begin external
  target: 'node',
     externals: [nodeExternals()]
@@ -57,8 +51,8 @@ node: {
     //         },
     //     }),
     // ]
-//end external    
-},    
+//end external
+},
 
     },
     {

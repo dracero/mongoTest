@@ -7,7 +7,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "bn_moodle",
   password: "6e76bb48c3",
-  database: "bitnami_moodle"   
+  database: "bitnami_moodle"
 });
 var notes = [];
 con.connect();
@@ -17,16 +17,14 @@ app.get('/', function (req, res) {
             .on('result', function(data){
                 // Push results onto the notes array
                 notes.push(data);
-                
             })
             .on('end', function(){
                // Only emit notes after query has been completed
                 res.send(notes)
                 notes = [];
             })
+            res.setHeader('Access-Control-Allow-Origin','*');
 
-  
 })
 
 app.listen(3000)
-
