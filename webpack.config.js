@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-//var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: [
@@ -35,31 +34,4 @@ node: {
     hot: true,
 
   },
-
- /*begin external
- target: 'node',
-    externals: [nodeExternals()]
-    //If you want to minify your files uncomment this
-    // ,
-    // plugins: [
-    //     new webpack.optimize.UglifyJsPlugin({
-    //         compress: {
-    //             warnings: false,
-    //         },
-    //         output: {
-    //             comments: false,
-    //         },
-    //     }),
-    // ]
-//end external
-},
-
-    },
-    {
-        entry: 'index.js',
-        output: {
-            path: __dirname + '/bin',
-            filename: 'app.bundle.js',
-},*/
-
 };
